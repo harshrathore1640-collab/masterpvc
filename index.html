@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Master PVC — Premium interior decor, PVC, WPC and ceiling solutions in Assandh.">
+<meta name="theme-color" content="#080808">
+<title>Master PVC | Premium Interior Decor</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#070707;
+  --surface:#101010;
+  --surface2:#151515;
+  --gold:#c9a45c;
+  --gold2:#ead39b;
+  --text:#f5f2eb;
+  --muted:#a7a39a;
+  --line:rgba(201,164,92,.22);
+  --white:#fff;
+  --max:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"DM Sans",sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(var(--max),92%);margin:auto}
+.section{padding:110px 0}
+.eyebrow{
+  color:var(--gold2);
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.08}
+h2{font-size:clamp(40px,5vw,70px);font-weight:600}
+.section-head{max-width:760px;margin-bottom:55px}
+.section-head p{color:var(--muted);margin-top:18px;font-size:17px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 24px;border:1px solid var(--gold);
+  transition:.35s ease;font-weight:700;font-size:14px;
+}
+.btn-gold{background:var(--gold);color:#111}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-3px)}
+.btn-outline{background:transparent;color:var(--text)}
+.btn-outline:hover{background:rgba(201,164,92,.12);transform:translateY(-3px)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  background:linear-gradient(180deg,rgba(0,0,0,.86),rgba(0,0,0,0));
+  padding:22px 0;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:48px;height:48px;border:1px solid var(--gold);
+  border-radius:50%;display:grid;place-items:center;
+  color:var(--gold);font-family:"Playfair Display";font-weight:700;font-size:19px;
+  background:#090909;
+}
+.brand-name{font-weight:800;letter-spacing:.13em;font-size:14px}
+.brand-name span{display:block;color:var(--gold);font-size:10px;letter-spacing:.2em;margin-top:1px}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:13px;color:#ddd;transition:.25s}
+.nav-links a:hover{color:var(--gold2)}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:27px}
+
+/* HERO */
+.hero{
+  min-height:100vh;position:relative;display:flex;align-items:flex-end;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.32) 58%,rgba(0,0,0,.72)),
+    linear-gradient(0deg,rgba(0,0,0,.72),transparent 55%),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=90") center/cover;
+}
+.hero-content{padding:170px 0 95px;max-width:790px}
+.hero h1{font-size:clamp(58px,8vw,112px);letter-spacing:-.035em}
+.hero h1 span{color:var(--gold)}
+.hero-sub{
+  max-width:620px;color:#d3d0ca;font-size:18px;margin:25px 0 32px;
+}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.hero-bottom{
+  position:absolute;bottom:28px;right:4%;display:flex;align-items:center;gap:14px;
+  color:#d7d2c8;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+}
+.scroll-line{width:65px;height:1px;background:var(--gold)}
+
+/* INTRO */
+.intro{background:#0b0b0b}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.intro-image{height:620px;position:relative;overflow:hidden}
+.intro-image img{height:100%;transition:transform 1s}
+.intro-image:hover img{transform:scale(1.04)}
+.intro-copy h2{margin-bottom:25px}
+.intro-copy p{color:var(--muted);font-size:17px;margin-bottom:17px}
+.signature{margin-top:30px;color:var(--gold2);font-family:"Playfair Display";font-size:23px}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.service{
+  min-height:260px;background:var(--surface);padding:34px;
+  position:relative;overflow:hidden;transition:.35s;
+}
+.service:hover{background:#16130f}
+.service-number{color:var(--gold);font-size:12px;letter-spacing:.16em}
+.service h3{font-size:29px;margin:35px 0 12px}
+.service p{color:var(--muted);font-size:14px}
+.service-arrow{position:absolute;right:28px;bottom:25px;color:var(--gold);font-size:24px}
+
+/* SHOWCASE */
+.showcase{background:#0c0c0c}
+.masonry{display:grid;grid-template-columns:1.1fr .9fr .9fr;grid-template-rows:300px 300px;gap:12px}
+.tile{overflow:hidden;position:relative}
+.tile img{height:100%;transition:transform .8s}
+.tile:hover img{transform:scale(1.05)}
+.tile:nth-child(1){grid-row:1/3}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent 60%);pointer-events:none}
+.tile-label{position:absolute;z-index:2;left:22px;bottom:20px;color:#fff;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.process{padding:30px 20px 10px;border-right:1px solid var(--line)}
+.process:last-child{border-right:0}
+.process strong{font-size:12px;color:var(--gold)}
+.process h3{font-size:25px;margin:28px 0 10px}
+.process p{color:var(--muted);font-size:13px}
+
+/* CTA */
+.cta{
+  padding:100px 0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2200&q=85") center/cover;
+}
+.cta-box{max-width:850px}
+.cta h2{font-size:clamp(42px,6vw,78px)}
+.cta p{color:#d0cbc1;max-width:650px;margin:20px 0 30px;font-size:17px}
+
+/* CONTACT */
+.contact{background:#0a0a0a}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.contact-info{display:grid;gap:22px}
+.info{
+  border-bottom:1px solid var(--line);padding-bottom:20px;
+}
+.info small{display:block;text-transform:uppercase;color:var(--gold);letter-spacing:.16em;font-size:10px;margin-bottom:5px}
+.info a,.info div{font-size:20px;color:#eee}
+.contact-card{
+  background:#111;padding:38px;border:1px solid var(--line);
+}
+.contact-card h3{font-size:34px;margin-bottom:22px}
+.form{display:grid;gap:14px}
+.form input,.form textarea{
+  width:100%;background:#090909;border:1px solid #2b2b2b;color:#fff;
+  padding:16px;font:inherit;outline:none;
+}
+.form input:focus,.form textarea:focus{border-color:var(--gold)}
+.form textarea{min-height:130px;resize:vertical}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:45px 0 30px;background:#050505}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.footer-title{font-family:"Playfair Display";font-size:28px}
+.footer p{color:var(--muted);font-size:13px;margin-top:12px;max-width:330px}
+.footer h4{font-size:12px;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin-bottom:15px}
+.footer a{display:block;color:#aaa;font-size:13px;margin:9px 0}
+.footer a:hover{color:var(--gold2)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px solid #171717;color:#666;font-size:11px;display:flex;justify-content:space-between;gap:20px}
+
+/* FLOATING */
+.float-wrap{
+  position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:10px;
+}
+.float{
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  color:#fff;font-size:21px;box-shadow:0 10px 25px rgba(0,0,0,.4);
+  transition:.25s;
+}
+.float:hover{transform:translateY(-4px) scale(1.04)}
+.call{background:#171717;border:1px solid #555}
+.whatsapp{background:#168c4d;border:1px solid #31c77b}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .intro-grid,.contact-grid{grid-template-columns:1fr}
+  .intro-image{height:460px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .masonry{grid-template-columns:1fr 1fr;grid-template-rows:300px 220px 220px}
+  .tile:nth-child(1){grid-row:1/2;grid-column:1/3}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .process:nth-child(2){border-right:0}
+  .process:nth-child(3){border-top:1px solid var(--line)}
+  .process:nth-child(4){border-top:1px solid var(--line)}
+  .process:nth-child(5){border-top:1px solid var(--line);grid-column:1/3}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .section{padding:75px 0}
+  nav{padding:15px 0}
+  .hero-content{padding:145px 0 75px}
+  .hero h1{font-size:57px}
+  .hero-sub{font-size:15px}
+  .hero-bottom{display:none}
+  .services-grid{grid-template-columns:1fr}
+  .service{min-height:230px}
+  .masonry{display:grid;grid-template-columns:1fr;grid-template-rows:auto}
+  .tile,.tile:nth-child(1){grid-column:auto;grid-row:auto;height:270px}
+  .process-grid{grid-template-columns:1fr}
+  .process,.process:nth-child(2),.process:nth-child(3),.process:nth-child(4),.process:nth-child(5){
+    grid-column:auto;border-right:0;border-bottom:1px solid var(--line);border-top:0!important;
+  }
+  .process:last-child{border-bottom:0}
+  .footer-grid{grid-template-columns:1fr}
+  .copy{flex-direction:column}
+  .float-wrap{right:14px;bottom:14px}
+  .float{width:48px;height:48px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#home">
+      <div class="logo">M</div>
+      <div class="brand-name">MASTER PVC<span>INTERIOR DECOR</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Solutions</a>
+      <a href="#work">Showcase</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="https://wa.me/919728745466?text=Hello%20Master%20PVC%2C%20I%20would%20like%20to%20know%20more%20about%20your%20interior%20solutions." target="_blank">WhatsApp</a>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<div id="mobileMenu" style="display:none;position:fixed;inset:0;background:#070707;z-index:45;padding:120px 8% 40px;">
+  <div style="display:grid;gap:25px;font-family:'Playfair Display';font-size:32px;">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#services" onclick="toggleMenu()">Solutions</a>
+    <a href="#work" onclick="toggleMenu()">Showcase</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+</div>
+
+<header class="hero" id="home">
+  <div class="container hero-content reveal">
+    <div class="eyebrow">Assandh · Haryana · India</div>
+    <h1>Where <span>Style</span><br>Meets Quality.</h1>
+    <p class="hero-sub">
+      Premium interior decor, PVC, WPC and ceiling solutions designed to bring
+      character, comfort and a refined finish to modern spaces.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#services">Explore Solutions</a>
+      <a class="btn btn-outline" href="tel:+919728745466">Call 09728 745466</a>
+    </div>
+  </div>
+  <div class="hero-bottom"><span class="scroll-line"></span>Scroll to explore</div>
+</header>
+
+<section class="section intro" id="about">
+  <div class="container intro-grid">
+    <div class="intro-image reveal">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85" alt="Premium interior">
+    </div>
+    <div class="intro-copy reveal">
+      <div class="eyebrow">Master PVC</div>
+      <h2>Premium surfaces. Refined spaces.</h2>
+      <p>
+        Master PVC brings together practical materials and contemporary interior
+        aesthetics through PVC, WPC and ceiling solutions.
+      </p>
+      <p>
+        From statement ceilings to decorative wall applications, our focus is
+        on clean finishes, modern detailing and interiors that feel distinctive.
+      </p>
+      <div class="signature">Style · Detail · Quality</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Do</div>
+      <h2>Interior solutions with a premium finish.</h2>
+      <p>Explore our core material and interior decor solutions for modern residential and commercial spaces.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <article class="service">
+        <div class="service-number">01 / PVC</div>
+        <h3>PVC Solutions</h3>
+        <p>Clean, durable and versatile decorative solutions for walls, ceilings and interior surfaces.</p>
+        <div class="service-arrow">↗</div>
+      </article>
+      <article class="service">
+        <div class="service-number">02 / WPC</div>
+        <h3>WPC Interiors</h3>
+        <p>Contemporary wood-inspired finishes that bring warmth and texture to modern interiors.</p>
+        <div class="service-arrow">↗</div>
+      </article>
+      <article class="service">
+        <div class="service-number">03 / CEILING</div>
+        <h3>Ceiling Design</h3>
+        <p>Statement ceiling concepts that add depth, character and a finished architectural look.</p>
+        <div class="service-arrow">↗</div>
+      </article>
+      <article class="service">
+        <div class="service-number">04 / DECOR</div>
+        <h3>Interior Decor</h3>
+        <p>Material-led decorative elements that help transform everyday rooms into polished spaces.</p>
+        <div class="service-arrow">↗</div>
+      </article>
+      <article class="service">
+        <div class="service-number">05 / WALLS</div>
+        <h3>Wall Features</h3>
+        <p>Textured and architectural wall applications for feature areas and visual focal points.</p>
+        <div class="service-arrow">↗</div>
+      </article>
+      <article class="service">
+        <div class="service-number">06 / CUSTOM</div>
+        <h3>Custom Finish</h3>
+        <p>Discuss your space and material requirements for a solution tailored to your interior.</p>
+        <div class="service-arrow">↗</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section showcase" id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Visual Showcase</div>
+      <h2>Designed to make a statement.</h2>
+      <p>A visual direction for premium ceilings, wall details and contemporary interior spaces.</p>
+    </div>
+
+    <div class="masonry reveal">
+      <div class="tile">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85" alt="Luxury interior">
+        <div class="tile-label">Luxury Interior</div>
+      </div>
+      <div class="tile">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85" alt="Modern room">
+        <div class="tile-label">Modern Detail</div>
+      </div>
+      <div class="tile">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" alt="Contemporary interior">
+        <div class="tile-label">Contemporary</div>
+      </div>
+      <div class="tile">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85" alt="Interior decor">
+        <div class="tile-label">Decor & Texture</div>
+      </div>
+      <div class="tile">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85" alt="Premium living space">
+        <div class="tile-label">Premium Space</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Approach</div>
+      <h2>Simple process. Beautiful result.</h2>
+    </div>
+    <div class="process-grid reveal">
+      <div class="process"><strong>01</strong><h3>Consult</h3><p>Discuss your space, requirements and preferred aesthetic.</p></div>
+      <div class="process"><strong>02</strong><h3>Select</h3><p>Explore suitable PVC, WPC and ceiling possibilities.</p></div>
+      <div class="process"><strong>03</strong><h3>Plan</h3><p>Choose the right finish, application and visual direction.</p></div>
+      <div class="process"><strong>04</strong><h3>Execute</h3><p>Bring the selected interior solution into your space.</p></div>
+      <div class="process"><strong>05</strong><h3>Finish</h3><p>Complete the details for a clean and polished result.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container cta-box reveal">
+    <div class="eyebrow">Start Your Interior</div>
+    <h2>Ready to transform your space?</h2>
+    <p>Tell us what you are looking for and connect directly with Master PVC for your interior decor requirements.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="https://wa.me/919728745466?text=Hello%20Master%20PVC%2C%20I%20want%20to%20discuss%20an%20interior%20decor%20requirement." target="_blank">Enquire on WhatsApp</a>
+      <a class="btn btn-outline" href="tel:+919728745466">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Contact Master PVC</div>
+      <h2>Let's talk about your space.</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="info">
+          <small>Call</small>
+          <a href="tel:+919728745466">09728 745466</a>
+        </div>
+        <div class="info">
+          <small>WhatsApp</small>
+          <a href="https://wa.me/919728745466" target="_blank">+91 97287 45466</a>
+        </div>
+        <div class="info">
+          <small>Email</small>
+          <a href="mailto:masterdecoraters@gmail.com">masterdecoraters@gmail.com</a>
+        </div>
+        <div class="info">
+          <small>Location</small>
+          <div>Assandh, Haryana, India 132039</div>
+        </div>
+        <div class="info">
+          <small>Instagram</small>
+          <a href="https://www.instagram.com/master_pvc_asandh/" target="_blank">@master_pvc_asandh</a>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <h3>Send an enquiry</h3>
+        <form class="form" onsubmit="sendWhatsApp(event)">
+          <input id="name" type="text" placeholder="Your name" required>
+          <input id="phone" type="tel" placeholder="Your phone number" required>
+          <input id="service" type="text" placeholder="PVC / WPC / Ceiling / Interior Decor">
+          <textarea id="message" placeholder="Tell us briefly about your requirement"></textarea>
+          <button class="btn btn-gold" type="submit">Send on WhatsApp ↗</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">Master PVC</div>
+        <p>Premium interior decor, PVC, WPC and ceiling solutions — where style meets quality.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#about">About</a>
+        <a href="#services">Solutions</a>
+        <a href="#work">Showcase</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <a href="#services">PVC</a>
+        <a href="#services">WPC</a>
+        <a href="#services">Ceiling</a>
+        <a href="#services">Interior Decor</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="tel:+919728745466">09728 745466</a>
+        <a href="https://wa.me/919728745466" target="_blank">WhatsApp</a>
+        <a href="mailto:masterdecoraters@gmail.com">Email</a>
+        <a href="https://www.instagram.com/master_pvc_asandh/" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="year"></span> Master PVC. All rights reserved.</span>
+      <span>Premium Interior Decor · PVC · WPC · Ceiling Solutions</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float-wrap">
+  <a class="float call" href="tel:+919728745466" aria-label="Call Master PVC">☎</a>
+  <a class="float whatsapp" href="https://wa.me/919728745466?text=Hello%20Master%20PVC%2C%20I%20would%20like%20to%20enquire%20about%20your%20interior%20solutions." target="_blank" aria-label="WhatsApp Master PVC">◉</a>
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+function toggleMenu(){
+  const menu=document.getElementById('mobileMenu');
+  menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+document.getElementById('year').textContent=new Date().getFullYear();
+
+function sendWhatsApp(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const service=document.getElementById('service').value.trim();
+  const message=document.getElementById('message').value.trim();
+  const text =
+`Hello Master PVC,
+
+My name is ${name}.
+Phone: ${phone}
+Requirement: ${service || 'Interior Decor'}
+Message: ${message || 'I would like to know more about your services.'}
+
+Please contact me.`;
+  window.open('https://wa.me/919728745466?text='+encodeURIComponent(text),'_blank');
+}
+</script>
+</body>
+</html>
